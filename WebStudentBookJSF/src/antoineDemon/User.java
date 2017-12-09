@@ -13,8 +13,9 @@ import javax.faces.validator.ValidatorException;
 @RequestScoped // creates an instance of Student for each user request
 public class User implements Serializable{
 	int userID;
-	String name;
-	String role;
+	String FirstName;
+	String LastName;
+	String Email;
 	
 	public User(){ 
 		
@@ -25,16 +26,22 @@ public class User implements Serializable{
 	public void setUserID(int userID) {
 		this.userID = userID;
 	}
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return FirstName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.FirstName = firstName;
 	}
-	public String getRole(){
-		return role;
+	public String getLastName() {
+		return FirstName;
 	}
-	public void setRole(String role){
-		this.role=role;
+	public void setLastName(String lastName) {
+		this.FirstName = lastName;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		this.Email = email;
 	}
 }
