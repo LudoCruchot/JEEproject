@@ -1,7 +1,6 @@
 package antoineDemon;
 
 import java.io.Serializable;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -12,6 +11,8 @@ import javax.faces.validator.ValidatorException;
 @ManagedBean //register the class student as JSF resource
 @RequestScoped // creates an instance of Student for each user request
 public class User implements Serializable{
+	private static final long serialVersionUID = 1L;
+
 	int userID;
 	String FirstName;
 	String LastName;

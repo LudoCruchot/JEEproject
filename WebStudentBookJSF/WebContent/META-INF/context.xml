@@ -4,7 +4,7 @@
 		auth="Container" type="javax.sql.DataSource"
 		driverClassName="com.mysql.jdbc.Driver"
 		maxActive="20" maxIdle="5" maxWait="10000"
-		username="yourMySQLusername" password="yourPassword"
+		username="root" password="root"
 		url="jdbc:mysql://localhost:3306/studentdb?
 	useSSL=false"/>
 </Context>
