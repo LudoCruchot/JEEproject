@@ -14,15 +14,15 @@ xmlns:p="http://primefaces.org/ui">
 	<p:panel>
 		<h:panelGrid>
 			<h:outputText value="First Name" />
-			<h:inputText value="#{addStudentBean.FName}"></h:inputText>
+			<h:inputText value="#{addStudentBean.student.firstName}"></h:inputText>
 			<h:outputText value="Last Name" />
-			<h:inputText value="#{addStudentBean.LName}" ></h:inputText>
+			<h:inputText value="#{addStudentBean.student.lastName}" ></h:inputText>
 			<h:outputText value="Email" />
-			<h:inputText value="#{addStudentBean.Email}" ></h:inputText>
+			<h:inputText value="#{addStudentBean.student.email}" ></h:inputText>
 		
 		</h:panelGrid>
 	</p:panel>
-
+<h:commandButton value="Add" action="#{addStudentBean.AddStudent}"></h:commandButton>
 </h:form>
 
 </body>

@@ -1,28 +1,33 @@
 package antoineDemon;
 
-import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
 
-public class AddStudentBean implements Serializable {
+public class AddStudentBean{
 	
-	private static final long serialVersionUID = 6081417964063918994L;
+	private Student student = new Student();
+	
+	public Student getStudent(){
+		return student;
+	}
+	
+	public void setStudent(Student student){
+		this.student=student;
+	}
 	
 	public void AddStudent() throws ClassNotFoundException, SQLException{
 		
 		Connection connect = null;
 
-		String url = "jdbc:mysql://localhost:3306/studentdb?useSSL=true";// + "?verifyServerCertificate=true" + "&useSSL=true" + "&requireSSL=true";
+		String url = "jdbc:mysql://localhost:3306/studentdb?useSSL=false";// + "?verifyServerCertificate=true" + "&useSSL=true" + "&requireSSL=true";
 		// deuxieme url "jdbc:mysql://localhost:3306/studentdb?useSSL=true"
 
 		String username = "root";
@@ -39,15 +44,16 @@ public class AddStudentBean implements Serializable {
 		}
 		
 		// donner aux 3 strings les valeurs rentrées dans AddStudent.xhtml
-		String FName;
-		String LName;
-		String Email;
+		
+		
+		String FName=student.getFirstName();
+		String LName=student.getLastName();
+		String Email=student.getEmail();
 		
 		PreparedStatement pstmt=connect.prepareStatement("insert into student(firstname, lastname, email) values("+FName+","+LName+","+Email);
-		ResultSet rs = pstmt.executeQuery();
+		pstmt.executeQuery();
 		
 		
-		rs.close();
 		pstmt.close();
 		connect.close();
 	}

@@ -22,7 +22,7 @@ public class StudentBean implements Serializable {
 		
 		Connection connect = null;
 
-		String url = "jdbc:mysql://localhost:3306/studentdb?useSSL=true";// + "?verifyServerCertificate=true" + "&useSSL=true" + "&requireSSL=true";
+		String url = "jdbc:mysql://localhost:3306/studentdb?useSSL=false";// + "?verifyServerCertificate=true" + "&useSSL=true" + "&requireSSL=true";
 		// deuxieme url "jdbc:mysql://localhost:3306/studentdb?useSSL=true"
 
 		String username = "root";
