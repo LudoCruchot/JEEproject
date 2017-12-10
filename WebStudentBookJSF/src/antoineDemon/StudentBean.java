@@ -19,7 +19,6 @@ public class StudentBean implements Serializable {
 	private static final long serialVersionUID = 6081417964063918994L;
 	
 	public List<Student> getStudents() throws ClassNotFoundException, SQLException{
-		System.out.println("getstudents");
 		
 		Connection connect = null;
 
@@ -52,7 +51,6 @@ public class StudentBean implements Serializable {
 			Student student= new Student(id, firstname, lastname, email);
 			
 			students.add(student);
-			System.out.println( student.toString());
 			
 		}
 		
