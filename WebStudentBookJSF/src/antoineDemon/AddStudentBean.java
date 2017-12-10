@@ -50,8 +50,14 @@ public class AddStudentBean{
 		String LName=student.getLastName();
 		String Email=student.getEmail();
 		
-		PreparedStatement pstmt=connect.prepareStatement("insert into student(firstname, lastname, email) values("+FName+","+LName+","+Email);
-		pstmt.executeQuery();
+		System.out.println(FName);
+		System.out.println(LName);
+		System.out.println(Email);
+		
+		//PreparedStatement pstmt=connect.prepareStatement("insert into student (firstName, lastName, email) values("+FName+","+LName+","+Email+")");
+		PreparedStatement pstmt=connect.prepareStatement("insert into student (firstName, lastName, email) values('" + FName + "','" + LName + "','" + Email + "')");
+		//("insert into student (firstName, lastName, email) values('" + FName + "','" + LName + "','" + Email + "')";
+		pstmt.executeUpdate();
 		
 		
 		pstmt.close();
