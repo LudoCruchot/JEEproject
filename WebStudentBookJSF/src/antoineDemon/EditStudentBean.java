@@ -3,7 +3,6 @@ package antoineDemon;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -33,6 +32,7 @@ public class EditStudentBean {
 				System.out.println(ex.getMessage());
 			}
 			
+			int ID=student.getStudentID();
 			String FName=student.getFirstName();
 			String LName=student.getLastName();
 			String Email=student.getEmail();
@@ -42,7 +42,7 @@ public class EditStudentBean {
 			System.out.println(Email);
 			
 		
-			PreparedStatement pstmt=connect.prepareStatement("UPD into student (firstName, lastName, email) values('" + FName + "','" + LName + "','" + Email + "')");
+			PreparedStatement pstmt=connect.prepareStatement("UPDATE student SET firstname = '" + FName + "', lastname = '" + LName+ "' email '" + Email+ "' WHERE id='" + ID + "'");
 			pstmt.executeUpdate();
 			
 			

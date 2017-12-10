@@ -29,8 +29,10 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
 		       </h:column>
 		       	<h:column>
 					<f:facet name="header">Action</f:facet>
-		           <h:commandButton action="EditStudent" value="Edit" />
-		           <h:commandButton action="DeleteStudent" value="Delete" />
+					<h:form>
+			           <h:commandButton action="EditStudent" value="Edit" />
+			           <h:commandButton action="DeleteStudent" value="Delete" />
+		           </h:form>
 		       </h:column>
 			</h:dataTable>
 			<br/>
@@ -38,7 +40,7 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
 		<div id="footer">
 		  <ui:insert name="footer">
 		  	<h:form>
-		  		<h:commandButton action="AddStudent" value="Add  student" />
+		  		<h:commandButton action="AddStudent" value="Add new student"/>
 		  	</h:form>
 		  </ui:insert>
 		</div>

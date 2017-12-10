@@ -10,21 +10,14 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 	<body>
 	<div id="header">
 		    <ui:insert name="header">
-		    	Welcome to login page
+		    	<h1>Welcome to login page</h1>
 		    </ui:insert>
 		</div>
 		<div id="content">
 			<ui:insert name="content">
-				<h:form> 
-					<h:outputText value="User FirstName: "/> 
-					<h:inputText value="#{student.firstName}" title="firstName" id="firstName"/>
-					<br/>
-					
-					<h:outputText value="User ID: "/> 
-					<h:inputText value="#{student.studentID}" title="id" id="userId"/>
-					<br/>
-					
-					<h:commandButton action="StudentsList" value="Submit" />
+				<h:form>		
+				<h2>To acces to the student list: </h2>			
+					<h:commandButton action="StudentsList" value="acces" />
 				</h:form>
 			</ui:insert>
 		</div>
