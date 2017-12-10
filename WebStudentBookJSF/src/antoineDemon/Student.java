@@ -1,12 +1,7 @@
 package antoineDemon;
 
-import java.io.Serializable;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.validator.ValidatorException;
 
 @ManagedBean //register the class student as JSF resource
 @RequestScoped // creates an instance of Student for each user request
@@ -14,9 +9,9 @@ public class Student{
 	//private static final long serialVersionUID = 1L;
 
 	int studentID;
-	String FirstName;
-	String LastName;
-	String Email;
+	String firstName;
+	String lastName;
+	String email;
 	
 	public Student(){
 		
@@ -24,9 +19,9 @@ public class Student{
 	
 	public Student(int id, String firstName, String lastName, String email){ 
 		this.studentID=id;
-		this.FirstName=firstName;
-		this.LastName=lastName;
-		this.Email=email;
+		this.firstName=firstName;
+		this.lastName=lastName;
+		this.email=email;
 	}
 	public int getStudentID() {
 		return studentID;
@@ -35,21 +30,25 @@ public class Student{
 		this.studentID = studentID;
 	}
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
 	public void setFirstName(String firstName) {
-		this.FirstName = firstName;
+		this.firstName = firstName;
 	}
 	public String getLastName() {
-		return FirstName;
+		return lastName;
 	}
 	public void setLastName(String lastName) {
-		this.FirstName = lastName;
+		this.lastName = lastName;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		this.Email = email;
+		this.email = email;
 	}
+	public String toString(){
+		return firstName + " " + lastName + " " + email;
+	}
+
 }

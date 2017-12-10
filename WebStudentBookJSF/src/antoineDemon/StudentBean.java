@@ -19,6 +19,7 @@ public class StudentBean implements Serializable {
 	private static final long serialVersionUID = 6081417964063918994L;
 	
 	public List<Student> getStudents() throws ClassNotFoundException, SQLException{
+		System.out.println("getstudents");
 		
 		Connection connect = null;
 
@@ -44,13 +45,14 @@ public class StudentBean implements Serializable {
 		
 		while(rs.next()){
 			
-			Student student= new Student();
-			student.setStudentID(rs.getInt("id"));
-			student.setFirstName(rs.getString("firstname"));
-			student.setLastName(rs.getString("lastname"));
-			student.setEmail(rs.getString("email"));
+			int id = rs.getInt("id");
+			String firstname = rs.getString("firstname");
+			String lastname = rs.getString("lastname");
+			String email = rs.getString("firstname");
+			Student student= new Student(id, firstname, lastname, email);
 			
 			students.add(student);
+			System.out.println( student.toString());
 			
 		}
 		
