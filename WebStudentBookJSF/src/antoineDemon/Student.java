@@ -10,16 +10,23 @@ import javax.faces.validator.ValidatorException;
 
 @ManagedBean //register the class student as JSF resource
 @RequestScoped // creates an instance of Student for each user request
-public class Student implements Serializable{
-	private static final long serialVersionUID = 1L;
+public class Student{
+	//private static final long serialVersionUID = 1L;
 
 	int studentID;
 	String FirstName;
 	String LastName;
 	String Email;
 	
-	public Student(){ 
+	public Student(){
 		
+	}
+	
+	public Student(int id, String firstName, String lastName, String email){ 
+		this.studentID=id;
+		this.FirstName=firstName;
+		this.LastName=lastName;
+		this.Email=email;
 	}
 	public int getStudentID() {
 		return studentID;

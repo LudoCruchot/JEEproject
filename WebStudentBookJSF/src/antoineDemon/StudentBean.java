@@ -16,11 +16,14 @@ import javax.faces.bean.SessionScoped;
 
 public class StudentBean implements Serializable {
 	
+	private static final long serialVersionUID = 6081417964063918994L;
+	
 	public List<Student> getStudents() throws ClassNotFoundException, SQLException{
 		
 		Connection connect = null;
 
-		String url = "jdbc:mysql://localhost:3306/studentdb";
+		String url = "jdbc:mysql://localhost:3306/studentdb?useSSL=true";// + "?verifyServerCertificate=true" + "&useSSL=true" + "&requireSSL=true";
+		// deuxieme url "jdbc:mysql://localhost:3306/studentdb?useSSL=true"
 
 		String username = "root";
 		String password = "root";

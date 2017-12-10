@@ -9,23 +9,24 @@
 </head>
 <body>
 
+<H2>List students</H2>
 
-<h:dataTable value="#{StudentBean.students}" var="student" border="2">
+<h:dataTable value="#{studentBean.students}" var="student" border="2">
 		<h:column>
 			<f:facet name="header">Student ID</f:facet>
-         #{student.id}
+         #{Student.studentID}
       </h:column>
 		<h:column>
 			<f:facet name="header">Student Firstname</f:facet>
-         #{student.firstName}
+         #{Student.FirstName}
       </h:column>
 		<h:column>
 			<f:facet name="header">Student Lastname</f:facet>
-           #{student.lastName}
+           #{Student.LastName}
        </h:column>
 		<h:column>
 			<f:facet name="header">Student Mail</f:facet>
-           #{student.email}
+           #{Student.Email}
        </h:column>
 	</h:dataTable>
 

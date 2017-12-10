@@ -13,14 +13,14 @@ xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:form> 
 
 <h:outputText value="User FirstName: "/> 
-<h:inputText value="#{user.firstName}" title="firstName" id="firstName"/>
+<h:inputText value="#{student.firstName}" title="firstName" id="firstName"/>
 <br/>
 
 <h:outputText value="User ID: "/> 
-<h:inputText value="#{user.userID}" title="id" id="userId"/>
+<h:inputText value="#{student.studentID}" title="id" id="userId"/>
 <br/>
 
-<h:commandButton action="AfterLoggin" value="Submit" />
+<h:commandButton action="StudentsList" value="Submit" />
 
 </h:form>
 </ui:insert>
