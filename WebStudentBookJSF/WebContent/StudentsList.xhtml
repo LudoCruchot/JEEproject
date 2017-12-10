@@ -7,6 +7,7 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
 		</head>
 	<body>
 		<div id="header">
+			<h1>List of Student</h1>
 		</div>
 		<div id="content">
 			<h:dataTable value="#{studentBean.students}" var="student" border="2">
@@ -26,10 +27,16 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
 					<f:facet name="header">Student Mail</f:facet>
 		           #{student.email}
 		       </h:column>
+		       	<h:column>
+					<f:facet name="header">Action</f:facet>
+		           <h:commandButton action="EditStudent" value="Edit" />
+		           <h:commandButton action="DeleteStudent" value="Delete" />
+		       </h:column>
 			</h:dataTable>
 		</div>
 		<div id="footer">
 		  <ui:insert name="footer">
+		  	<h:commandButton action="AddStudent" value="Add new student" />
 		  </ui:insert>
 		</div>
 	</body>
