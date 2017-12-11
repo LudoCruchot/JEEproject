@@ -13,6 +13,14 @@ public class EditStudentBean {
 	
 	private Student student = new Student();
 	
+	public Student getStudent(){
+		return student;
+	}
+	
+	public void setStudent(Student student){
+		this.student=student;
+	}
+	
 	public void EditStudent() throws ClassNotFoundException, SQLException{
 			
 			Connection connect = null;
@@ -36,16 +44,10 @@ public class EditStudentBean {
 			String FName=student.getFirstName();
 			String LName=student.getLastName();
 			String Email=student.getEmail();
-			
-			System.out.println(FName);
-			System.out.println(LName);
-			System.out.println(Email);
-			
-		
-			PreparedStatement pstmt=connect.prepareStatement("UPDATE student SET firstname = '" + FName + "', lastname = '" + LName+ "' email '" + Email+ "' WHERE id='" + ID + "'");
+
+			PreparedStatement pstmt=connect.prepareStatement("UPDATE student SET firstname='" + FName + "', lastname='" + LName + "', email='" + Email + "' where id=" + ID);
 			pstmt.executeUpdate();
-			
-			
+
 			pstmt.close();
 			connect.close();
 		}	

@@ -27,8 +27,7 @@ public class AddStudentBean{
 		
 		Connection connect = null;
 
-		String url = "jdbc:mysql://localhost:3306/studentdb?useSSL=false";// + "?verifyServerCertificate=true" + "&useSSL=true" + "&requireSSL=true";
-		// deuxieme url "jdbc:mysql://localhost:3306/studentdb?useSSL=true"
+		String url = "jdbc:mysql://localhost:3306/studentdb?useSSL=false";
 
 		String username = "root";
 		String password = "root";
@@ -42,9 +41,6 @@ public class AddStudentBean{
 			System.out.println("in exec");
 			System.out.println(ex.getMessage());
 		}
-		
-		// donner aux 3 strings les valeurs rentrées dans AddStudent.xhtml
-		
 		
 		String FName=student.getFirstName();
 		String LName=student.getLastName();
