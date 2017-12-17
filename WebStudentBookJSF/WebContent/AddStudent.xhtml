@@ -14,7 +14,7 @@ xmlns:p="http://primefaces.org/ui">
 			<p:panel>
 				<h:panelGrid>
 					<h:outputText value="First Name" />
-					<h:inputText value="#{addStudentBean.student.firstName}" title="firstName" id="firstName" required="true"
+					<h:inputText value="#{studentb.student.firstName}" title="firstName" id="firstName" required="true"
 				  			requiredMessage="Fill the first name please"
 				  			validatorMessage="first name should contain at least 2 letters">
 					<f:validateLength minimum="2"/>
@@ -23,7 +23,7 @@ xmlns:p="http://primefaces.org/ui">
 					<br/>
 					
 					<h:outputText value="Last Name" />
-					<h:inputText value="#{addStudentBean.student.lastName}" title="lastName" id="lastName" required="true"
+					<h:inputText value="#{studentb.student.lastName}" title="lastName" id="lastName" required="true"
 				  			requiredMessage="Fill the last name please"
 				  			validatorMessage="last name should contain at least 2 letters">
 					<f:validateLength minimum="2"/>
@@ -32,7 +32,7 @@ xmlns:p="http://primefaces.org/ui">
 					<br/>
 					
 					<h:outputText value="Email" />
-					<h:inputText value="#{addStudentBean.student.email}" title="email" id="email" required="true"
+					<h:inputText value="#{studentb.student.email}" title="email" id="email" required="true"
 				  			requiredMessage="Fill the email please"
 				  			validatorMessage="email should contain a @">
 				  	<f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />		
@@ -41,7 +41,7 @@ xmlns:p="http://primefaces.org/ui">
 					<br/>
 				
 				</h:panelGrid>
-			<h:commandButton value="Add" action="#{addStudentBean.AddStudent}"></h:commandButton>
+			<h:commandButton value="Add" action="#{studentb.AddStudent}"></h:commandButton>
 			</p:panel>
 		</h:form>
 		<h:form>

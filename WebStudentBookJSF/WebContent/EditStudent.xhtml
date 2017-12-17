@@ -18,7 +18,7 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
 					<p:panel>
 						<h:panelGrid>
 							<h:outputText value="First Name" />
-							<h:inputText value="#{edit.student.firstName}" title="firstName" id="firstName"
+							<h:inputText value="#{studentb.student.firstName}" title="firstName" id="firstName"
 				  					requiredMessage="Fill the first name please"
 				  					validatorMessage="first name should contain at least 2 letters">
 							<f:validateLength minimum="2"/>
@@ -27,7 +27,7 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
 							<br/>
 							
 							<h:outputText value="Last Name" />
-							<h:inputText value="#{edit.student.lastName}"  title="lastName" id="lastName"
+							<h:inputText value="#{studentb.student.lastName}"  title="lastName" id="lastName"
 				  					requiredMessage="Fill the last name please"
 				  					validatorMessage="last name should contain at least 2 letters">
 							<f:validateLength minimum="2"/>
@@ -36,7 +36,7 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
 							<br/>
 							
 							<h:outputText value="Email" />
-							<h:inputText value="#{edit.student.email}"  title="email" id="email"
+							<h:inputText value="#{studentb.student.email}"  title="email" id="email"
 						  			requiredMessage="Fill the email please"
 						  			validatorMessage="email should contain a @">
 						  	<f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />		
@@ -45,8 +45,8 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
 							<br/>
 						</h:panelGrid>
 					</p:panel>
-					<h:commandButton action="#{edit.editStudent}" value="Save">
-   						<f:setPropertyActionListener target="#{edit.ids}" value="#{edit.student.studentID}" />
+					<h:commandButton action="#{studentb.editStudent}" value="Save">
+   						<f:setPropertyActionListener target="#{studentb.ids}" value="#{studentb.student.studentID}" />
 					</h:commandButton>
 				</h:form>
 		  </ui:insert>
