@@ -25,7 +25,7 @@ public class StudentBean implements Serializable {
 	}
 	
 	public void setStudent(Student student){
-		this.student=student;
+		this.student = student;
 	}
 	
 	public int getIds(){
