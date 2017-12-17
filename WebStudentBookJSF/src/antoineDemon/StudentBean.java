@@ -47,7 +47,7 @@ public class StudentBean implements Serializable {
 			int id = rs.getInt("id");
 			String firstname = rs.getString("firstname");
 			String lastname = rs.getString("lastname");
-			String email = rs.getString("firstname");
+			String email = rs.getString("email");
 			Student student= new Student(id, firstname, lastname, email);
 			
 			students.add(student);

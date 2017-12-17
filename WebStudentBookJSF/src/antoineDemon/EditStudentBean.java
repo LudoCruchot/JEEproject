@@ -1,5 +1,6 @@
 package antoineDemon;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,11 +8,14 @@ import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean
+@ManagedBean(name="edit")
 @SessionScoped
-public class EditStudentBean {
+public class EditStudentBean implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private Student student = new Student();
+	private int ids;
 	
 	public Student getStudent(){
 		return student;
@@ -21,7 +25,15 @@ public class EditStudentBean {
 		this.student=student;
 	}
 	
-	public void EditStudent() throws ClassNotFoundException, SQLException{
+	public int getIds(){
+		return ids;
+	}
+	
+	public void setIds(int id){
+		ids = id;
+	}
+	
+	public void editStudent() throws ClassNotFoundException, SQLException{
 			
 			Connection connect = null;
 
@@ -40,15 +52,15 @@ public class EditStudentBean {
 				System.out.println(ex.getMessage());
 			}
 			
-			int ID=student.getStudentID();
-			String FName=student.getFirstName();
-			String LName=student.getLastName();
-			String Email=student.getEmail();
+			String FName = student.getFirstName();
+			String LName = student.getLastName();
+			String Email = student.getEmail();
 
-			PreparedStatement pstmt=connect.prepareStatement("UPDATE student SET firstname='" + FName + "', lastname='" + LName + "', email='" + Email + "' where id=" + ID);
+			PreparedStatement pstmt=connect.prepareStatement("UPDATE student SET firstname='" + FName + "', lastname='" + LName + "', email='" + Email + "' where id=" + ids);
 			pstmt.executeUpdate();
 
 			pstmt.close();
 			connect.close();
 		}	
+
 }

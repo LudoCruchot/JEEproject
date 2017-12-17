@@ -1,35 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:p="http://primefaces.org/ui">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+          
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+ xmlns:p="http://primefaces.org/ui">
 	<head>
 		<title><ui:insert name="title">Default title</ui:insert></title>
 	</head>
 	<body>
-		<ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
 		<div id="header">
-		    <ui:insert name="header">
-		    <h1>Edit Student</h1>
-		    </ui:insert>
+			<ui:insert name="header">
+			<h1>Edit Student</h1>
+			</ui:insert>
 		</div>
 		<div id="content">
-		  <ui:insert name="content">
+			<ui:insert name="content">
 				<h:form>
 					<p:panel>
 						<h:panelGrid>
-							<h:outputText value="#{addStudentbean.student.studentID}"/>
+							<h:outputText value="#{edit.student.studentID}"/>
 							<h:outputText value="firstName" />
-							<h:inputText value="#{editStudentBean.student.firstName}"></h:inputText>
+							<h:inputText value="#{edit.student.firstName}"></h:inputText>
 							<h:outputText value="lastName" />
-							<h:inputText value="#{editStudentBean.student.lastName}" ></h:inputText>
-							<h:outputText value="email" />
-							<h:inputText value="#{editStudentBean.student.email}" ></h:inputText>
+							<h:inputText value="#{edit.student.lastName}" ></h:inputText>
+							<h:outputText value="email"/>
+							<h:inputText value="#{edit.student.email}" ></h:inputText>
 						</h:panelGrid>
 					</p:panel>
-				<h:commandButton value="Edit" action="#{editStudentBean.EditStudent}"></h:commandButton>
+					<h:commandButton action="#{edit.editStudent}" value="Save">
+   						<f:setPropertyActionListener target="#{edit.ids}" value="#{edit.student.studentID}" />
+					</h:commandButton>
 				</h:form>
 		  </ui:insert>
 		</div>

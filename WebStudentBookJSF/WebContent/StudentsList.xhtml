@@ -30,8 +30,12 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
 		       	<h:column>
 					<f:facet name="header">Action</f:facet>
 					<h:form>
-			           <h:commandButton action="EditStudent" value="Edit" />
-			           <h:commandButton action="DeleteStudent" value="Delete" />
+						<h:commandButton action="EditStudent" value="Edit">
+   							<f:setPropertyActionListener target="#{edit.student}" value="#{student}" />
+						</h:commandButton>
+						<h:commandButton action="#{delete.deleteStudent}" value="Delete">
+   							<f:setPropertyActionListener target="#{delete.ids}" value="#{student.studentID}" />
+						</h:commandButton>
 		           </h:form>
 		       </h:column>
 			</h:dataTable>

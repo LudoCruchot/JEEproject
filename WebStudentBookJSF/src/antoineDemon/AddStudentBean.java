@@ -1,18 +1,19 @@
 package antoineDemon;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 @ManagedBean
 @SessionScoped
+public class AddStudentBean implements Serializable{
 
-public class AddStudentBean{
-	
+	private static final long serialVersionUID = 1L;
+
 	private Student student = new Student();
 	
 	public Student getStudent(){
@@ -42,17 +43,11 @@ public class AddStudentBean{
 			System.out.println(ex.getMessage());
 		}
 		
-		String FName=student.getFirstName();
-		String LName=student.getLastName();
-		String Email=student.getEmail();
+		String FName = student.getFirstName();
+		String LName = student.getLastName();
+		String Email = student.getEmail();
 		
-		System.out.println(FName);
-		System.out.println(LName);
-		System.out.println(Email);
-		
-		//PreparedStatement pstmt=connect.prepareStatement("insert into student (firstName, lastName, email) values("+FName+","+LName+","+Email+")");
-		PreparedStatement pstmt=connect.prepareStatement("insert into student (firstName, lastName, email) values('" + FName + "','" + LName + "','" + Email + "')");
-		//("insert into student (firstName, lastName, email) values('" + FName + "','" + LName + "','" + Email + "')";
+		PreparedStatement pstmt=connect.prepareStatement("INSERT INTO student (firstName, lastName, email) VALUES('" + FName + "','" + LName + "','" + Email + "')");
 		pstmt.executeUpdate();
 		
 		
