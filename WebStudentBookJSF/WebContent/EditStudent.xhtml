@@ -17,13 +17,32 @@ xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
 				<h:form>
 					<p:panel>
 						<h:panelGrid>
-							<h:outputText value="#{edit.student.studentID}"/>
-							<h:outputText value="firstName" />
-							<h:inputText value="#{edit.student.firstName}"></h:inputText>
-							<h:outputText value="lastName" />
-							<h:inputText value="#{edit.student.lastName}" ></h:inputText>
-							<h:outputText value="email"/>
-							<h:inputText value="#{edit.student.email}" ></h:inputText>
+							<h:outputText value="First Name" />
+							<h:inputText value="#{edit.student.firstName}" title="firstName" id="firstName"
+				  					requiredMessage="Fill the first name please"
+				  					validatorMessage="first name should contain at least 2 letters">
+							<f:validateLength minimum="2"/>
+							</h:inputText>
+							<h:message for="firstName" style="color:red"/>
+							<br/>
+							
+							<h:outputText value="Last Name" />
+							<h:inputText value="#{edit.student.lastName}"  title="lastName" id="lastName"
+				  					requiredMessage="Fill the last name please"
+				  					validatorMessage="last name should contain at least 2 letters">
+							<f:validateLength minimum="2"/>
+							</h:inputText>
+							<h:message for="lastName" style="color:red"/>
+							<br/>
+							
+							<h:outputText value="Email" />
+							<h:inputText value="#{edit.student.email}"  title="email" id="email"
+						  			requiredMessage="Fill the email please"
+						  			validatorMessage="email should contain a @">
+						  	<f:validateRegex pattern="([^.@]+)(\.[^.@]+)*@([^.@]+\.)+([^.@]+)" />		
+							</h:inputText>
+							<h:message for="email" style="color:red"/>
+							<br/>
 						</h:panelGrid>
 					</p:panel>
 					<h:commandButton action="#{edit.editStudent}" value="Save">
